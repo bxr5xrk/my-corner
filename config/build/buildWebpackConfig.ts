@@ -1,5 +1,5 @@
 import { Configuration } from 'webpack';
-import BuildDevServer from './buildDevDerver';
+import BuildDevServer from './buildDevServer';
 import buildLoaders from './buildLoaders';
 import buildPlugins from './buildPlugins';
 import buildResolvers from './buildResolvers';
@@ -12,15 +12,14 @@ export default function buildWebpackConfig(
   const { entry, build, html, src } = paths;
 
   return {
-    // production (minified) or development
     mode,
-    // start file (main)
+
     entry,
-    // build path
+
     output: {
-      filename: '[name].[contenthash].js', // [name] - dynamic name, [contenthash] - hash to generate unique file
+      filename: '[name].[contenthash].js',
       path: build,
-      clean: true, // delete files from previous build
+      clean: true,
     },
     module: {
       rules: buildLoaders(src),
@@ -29,6 +28,6 @@ export default function buildWebpackConfig(
     plugins: buildPlugins(html),
 
     devServer: isDev ? BuildDevServer(port) : undefined,
-    devtool: isDev ? 'inline-source-map' : undefined, // debug
+    devtool: isDev ? 'inline-source-map' : undefined,
   };
 }

@@ -11,7 +11,7 @@ const Counter = () => {
         className="text-red-500 p-2 rounded-md border bg-white w-10 h-10 flex items-center justify-center m-20"
         onClick={() => setCounter((prev) => prev + 1)}
       >
-        {counter}
+        <h1>{counter}</h1>
       </button>
     </div>
   );

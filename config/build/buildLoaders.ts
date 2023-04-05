@@ -1,11 +1,10 @@
 import { RuleSetRule } from 'webpack';
 
-// loaders - using to process files with different extensions
 export default function buildLoaders(path: string): RuleSetRule[] {
   const tsLoader = {
     test: /\.tsx?$/,
     use: 'ts-loader',
-    exclude: /node_modules/, // without this
+    exclude: /node_modules/,
   };
 
   const styleLoader = {
