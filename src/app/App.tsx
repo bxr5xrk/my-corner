@@ -5,25 +5,10 @@ import {
   Outlet,
   RouterProvider,
 } from 'react-router-dom';
-import { ThemeProvider, useTheme } from 'theme/ThemeContext';
-const MainPage = lazy(() => import('pages/MainPage'));
-const MePage = lazy(() => import('pages/MePage'));
-
-const cl = (
-  ...classes: Array<string | undefined | boolean | null | Record<string, any>>
-): string =>
-  classes
-    .map((i) =>
-      !i
-        ? ''
-        : typeof i === 'string'
-        ? i
-        : typeof i === 'object' && !!Object.values(i)[0]
-        ? Object.keys(i)[0]
-        : ''
-    )
-    .filter(Boolean)
-    .join(' ');
+import { ThemeProvider, useTheme } from 'app/providers/ThemeProvider';
+import { MainPage } from 'pages/MainPage';
+import { MePage } from 'pages/MePage';
+import { cl } from 'shared/lib/cl';
 
 export default function App() {
   return (
