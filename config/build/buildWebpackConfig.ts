@@ -24,7 +24,7 @@ export default function buildWebpackConfig(
     module: {
       rules: buildLoaders(src),
     },
-    resolve: buildResolvers(),
+    resolve: buildResolvers(src),
     plugins: buildPlugins(html),
 
     devServer: isDev ? BuildDevServer(port) : undefined,

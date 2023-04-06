@@ -5,9 +5,9 @@ import {
   Outlet,
   RouterProvider,
 } from 'react-router-dom';
-import { useTheme, ThemeProvider } from './theme/ThemeContext';
-const MainPage = lazy(() => import('./pages/MainPage'));
-const MePage = lazy(() => import('./pages/MePage'));
+import { ThemeProvider, useTheme } from 'theme/ThemeContext';
+const MainPage = lazy(() => import('pages/MainPage'));
+const MePage = lazy(() => import('pages/MePage'));
 
 const cl = (
   ...classes: Array<string | undefined | boolean | null | Record<string, any>>
