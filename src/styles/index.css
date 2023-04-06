@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('./themes/dark.css');
+@import url('./themes/light.css');
+
+@layer base {
+  body {
+    @apply font-fira min-h-screen;
+  }
+}
