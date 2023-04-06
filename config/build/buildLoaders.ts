@@ -1,3 +1,4 @@
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { RuleSetRule } from 'webpack';
 
 export default function buildLoaders(path: string): RuleSetRule[] {
@@ -10,7 +11,7 @@ export default function buildLoaders(path: string): RuleSetRule[] {
   const styleLoader = {
     test: /\.css$/i,
     include: path,
-    use: ['style-loader', 'css-loader', 'postcss-loader'],
+    use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
   };
 
   return [tsLoader, styleLoader];
