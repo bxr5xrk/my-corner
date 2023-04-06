@@ -1,9 +1,10 @@
-import { BuildPaths, BuildEnv } from './config/build/types/config';
+import { BuildPaths, BuildMode } from './config/build/types/config';
 import { resolve } from 'path';
-import webpack from 'webpack';
+import { Configuration } from 'webpack';
 import buildWebpackConfig from './config/build/buildWebpackConfig';
+require('dotenv').config();
 
-export default (env: BuildEnv) => {
+export default () => {
   const paths: BuildPaths = {
     entry: resolve(__dirname, 'src', 'index.tsx'),
     html: resolve(__dirname, 'public', 'index.html'),
@@ -11,12 +12,12 @@ export default (env: BuildEnv) => {
     src: resolve(__dirname, 'src'),
   };
 
-  const mode = env.mode || 'development';
-  const PORT = env.port || 3000;
+  const mode = (process.env.NODE_ENV as BuildMode) ?? 'development';
+  const PORT = Number(process.env.PORT) ?? 3000;
 
   const isDev = mode === 'development';
 
-  const config: webpack.Configuration = buildWebpackConfig({
+  const config: Configuration = buildWebpackConfig({
     mode,
     paths,
     isDev,
