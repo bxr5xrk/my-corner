@@ -9,6 +9,7 @@ export default function buildLoaders(path: string): RuleSetRule[] {
 
   const svgLoader = {
     test: /\.svg$/i,
+    issuer: /\.[jt]sx?$/,
     use: ['@svgr/webpack'],
   };
 
@@ -24,5 +25,5 @@ export default function buildLoaders(path: string): RuleSetRule[] {
     use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
   };
 
-  return [assetsLoader, svgLoader, tsLoader, styleLoader];
+  return [svgLoader, assetsLoader, tsLoader, styleLoader];
 }
