@@ -8,7 +8,7 @@ export const Layout = () => {
   const { theme } = useTheme();
 
   return (
-    <div className={cl(theme, 'bg-bg-color text-default min-h-screen')}>
+    <div className={cl(theme, 'bg-secondary-50 text-secondary-900 min-h-screen')}>
       <Navbar />
 
       <Suspense fallback={<>Loading...</>}>

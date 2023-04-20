@@ -9,7 +9,7 @@ interface NavbarProps {
 
 export default function Navbar({ className }: NavbarProps) {
   return (
-    <div className={cl('flex justify-between border p-3', className)}>
+    <div className={cl('flex justify-between border border-secondary-500 mb-2 p-3', className)}>
       <Link to={RoutePath.main}>Root</Link>
 
       <Link className="text-red-500" theme="bordered" to={RoutePath.me}>
