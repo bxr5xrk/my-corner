@@ -1,10 +1,13 @@
+import { Suspense } from 'react';
 import { ThemeProvider } from 'shared/ui/ThemeSwitcher';
-import { AppRouter } from './providers/router';
+import { AppRouter } from '../shared/config/router';
 
 export default function App() {
   return (
-    <ThemeProvider>
-      <AppRouter />
-    </ThemeProvider>
+    <Suspense fallback="">
+      <ThemeProvider>
+        <AppRouter />
+      </ThemeProvider>
+    </Suspense>
   );
 }
