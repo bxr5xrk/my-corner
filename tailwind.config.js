@@ -2,7 +2,7 @@ module.exports = {
   content: ['./src/**/*.{html,tsx}'],
   theme: {
     fontFamily: {
-      fira: ['Fira Code', 'monospace'],
+      fira: ['Fira Code', 'monospace']
     },
 
     extend: {
@@ -18,7 +18,7 @@ module.exports = {
           700: 'var(--secondary-700)',
           800: 'var(--secondary-800)',
           900: 'var(--secondary-900)',
-          950: 'var(--secondary-950)',
+          950: 'var(--secondary-950)'
         },
         primary: {
           50: 'var(--primary-50)',
@@ -31,17 +31,17 @@ module.exports = {
           700: 'var(--primary-700)',
           800: 'var(--primary-800)',
           900: 'var(--primary-900)',
-          950: 'var(--primary-950)',
-        },
+          950: 'var(--primary-950)'
+        }
 
         // secondary: 'var(--secondary-color)',
         // primary: 'rgb(var(--primary-color) / <alpha-value>)',
         // secondary: 'rgb(var(--secondary-color) / <alpha-value>)',
-      },
-    },
+      }
+    }
   },
   variants: {
-    extend: {},
+    extend: {}
   },
-  plugins: [],
+  plugins: []
 };

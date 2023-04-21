@@ -2,6 +2,7 @@ import { BuildPaths, BuildMode } from './config/build/types/config';
 import { resolve } from 'path';
 import { Configuration } from 'webpack';
 import buildWebpackConfig from './config/build/buildWebpackConfig';
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 require('dotenv').config();
 
 export default () => {
@@ -9,7 +10,7 @@ export default () => {
     entry: resolve(__dirname, 'src', 'index.tsx'),
     html: resolve(__dirname, 'public', 'index.html'),
     build: resolve(__dirname, 'dist'),
-    src: resolve(__dirname, 'src'),
+    src: resolve(__dirname, 'src')
   };
 
   const mode = (process.env.NODE_ENV as BuildMode) ?? 'development';
@@ -21,7 +22,7 @@ export default () => {
     mode,
     paths,
     isDev,
-    port: PORT,
+    port: PORT
   });
 
   return config;
