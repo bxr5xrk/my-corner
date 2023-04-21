@@ -1,6 +1,5 @@
 import { RoutePath } from 'app/providers/router';
 import { cl } from 'shared/lib/cl';
-import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { Link } from 'shared/ui/Link/Link';
 
 interface NavbarProps {
@@ -9,14 +8,12 @@ interface NavbarProps {
 
 export default function Navbar({ className }: NavbarProps) {
   return (
-    <div className={cl('flex justify-between border border-secondary-500 mb-2 p-3', className)}>
+    <header className={cl('flex justify-between p-2', className)}>
       <Link to={RoutePath.main}>Root</Link>
 
       <Link className="text-red-500" theme="bordered" to={RoutePath.me}>
         Me
       </Link>
-
-      <ThemeSwitcher />
-    </div>
+    </header>
   );
 }
