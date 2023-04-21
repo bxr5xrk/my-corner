@@ -1,12 +1,12 @@
 import { Layout } from 'pages/LayoutPage/LayoutPage';
-import { MainPage } from 'pages/MainPage';
+import { HomePage } from 'pages/HomePage';
 import { MePage } from 'pages/MePage';
 import { NotFoundPage } from 'pages/NotFoundPage';
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
 
 const AppRoutes = {
   ROOT: 'root',
-  MAIN: 'main',
+  HOME: 'home',
   ME: 'me',
   NOT_FOUND: 'not_found'
 } as const;
@@ -15,7 +15,7 @@ type RoutePath = (typeof AppRoutes)[keyof typeof AppRoutes];
 
 export const RoutePath: Record<RoutePath, string> = {
   [AppRoutes.ROOT]: '/',
-  [AppRoutes.MAIN]: '',
+  [AppRoutes.HOME]: '',
   [AppRoutes.ME]: '/me',
   [AppRoutes.NOT_FOUND]: '*'
 } as const;
@@ -29,9 +29,9 @@ const routeConfig: Record<RoutePath, RouteObject> = {
     path: RoutePath.me,
     element: <MePage />
   },
-  [AppRoutes.MAIN]: {
-    path: RoutePath.main,
-    element: <MainPage />
+  [AppRoutes.HOME]: {
+    path: RoutePath.home,
+    element: <HomePage />
   },
   [AppRoutes.NOT_FOUND]: {
     path: RoutePath.not_found,
@@ -40,15 +40,15 @@ const routeConfig: Record<RoutePath, RouteObject> = {
 } as const;
 
 const returnRoutes = (): RouteObject => {
-  const { root, main, me, not_found } = routeConfig;
+  const { root, home, me, not_found } = routeConfig;
 
   return {
     path: root.path,
     element: root.element,
     children: [
       {
-        path: main.path,
-        element: main.element
+        path: home.path,
+        element: home.element
       },
       {
         path: me.path,

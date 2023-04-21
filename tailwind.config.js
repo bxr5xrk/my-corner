@@ -4,8 +4,13 @@ module.exports = {
     fontFamily: {
       fira: ['Fira Code', 'monospace']
     },
-
     extend: {
+      gridTemplateColumns: {
+        autoFr: 'auto 1fr'
+      },
+      gridTemplateRows: {
+        autoFr: 'auto 1fr'
+      },
       colors: {
         secondary: {
           50: 'var(--secondary-50)',

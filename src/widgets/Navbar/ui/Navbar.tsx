@@ -1,22 +1,19 @@
 import { useTranslation } from 'react-i18next';
 import { RoutePath } from 'shared/config/router';
-import { cl } from 'shared/lib/cl';
 import { Link } from 'shared/ui/Link/Link';
 
-interface NavbarProps {
-  className?: string;
-}
-
-export default function Navbar({ className }: NavbarProps) {
+export default function Navbar() {
   const { t } = useTranslation();
 
   return (
-    <header className={cl('flex justify-between p-2', className)}>
-      <Link to={RoutePath.main}>{t('home')}</Link>
+    <header className="sticky top-0 border-b border-b-secondary-100">
+      <div className="mx-auto flex max-w-7xl justify-between bg-secondary-50 p-2">
+        <Link to={RoutePath.home}>{t('home')}</Link>
 
-      <Link className="text-red-500" theme="bordered" to={RoutePath.me}>
-        {t('cabinet')}
-      </Link>
+        <Link className="text-red-500" theme="bordered" to={RoutePath.me}>
+          {t('cabinet')}
+        </Link>
+      </div>
     </header>
   );
 }
