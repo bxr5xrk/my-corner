@@ -9,8 +9,6 @@ interface LangSwitcherProps {
 export const LangSwitcher = ({ isCollapsed }: LangSwitcherProps) => {
   const { t, i18n } = useTranslation();
 
-  console.log(i18n);
-
   const onLanguage = () => {
     const newLang = i18n.language === 'uk' ? 'en' : 'uk';
     localStorage.setItem('i18nextLng', newLang);

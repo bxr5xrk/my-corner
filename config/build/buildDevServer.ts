@@ -5,5 +5,6 @@ export default function BuildDevServer(port: number): Configuration {
     port,
     open: false,
     historyApiFallback: true, // allow reload not from root page
+    hot: true,
   };
 }

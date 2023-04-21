@@ -25,7 +25,7 @@ export default function buildWebpackConfig(
       rules: buildLoaders(src),
     },
     resolve: buildResolvers(src),
-    plugins: buildPlugins(html),
+    plugins: buildPlugins(html, isDev),
 
     devServer: isDev ? BuildDevServer(port) : undefined,
     devtool: isDev ? 'inline-source-map' : undefined,
