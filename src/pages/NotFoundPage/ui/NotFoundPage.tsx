@@ -1,11 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'shared/ui/Link/Link';
+import { Page } from 'widgets/Page';
 
 export const NotFoundPage = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="flex flex-grow flex-col items-center justify-center px-6 text-center lg:px-8">
+    <Page className="flex flex-grow flex-col items-center justify-center px-6 text-center lg:px-8">
       <p className="text-base font-semibold text-primary-600">404</p>
       <h1 className="mt-4 text-3xl font-bold tracking-tight text-secondary-900 sm:text-5xl">
         {t('pane-not-found')}
@@ -21,6 +22,6 @@ export const NotFoundPage = () => {
           {t('go-back-home')}
         </Link>
       </div>
-    </div>
+    </Page>
   );
 };

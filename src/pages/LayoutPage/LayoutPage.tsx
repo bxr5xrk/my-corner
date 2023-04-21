@@ -3,7 +3,6 @@ import { Outlet } from 'react-router-dom';
 import { cl } from 'shared/lib/cl';
 import { useTheme } from 'shared/ui/ThemeSwitcher';
 import { Navbar } from 'widgets/Navbar';
-import { Sidebar } from 'widgets/Sidebar';
 
 export const Layout = () => {
   const { theme } = useTheme();
@@ -17,13 +16,9 @@ export const Layout = () => {
     >
       <Navbar />
 
-      <div className="mx-auto grid w-full max-w-7xl grid-cols-autoFr gap-10">
-        <Sidebar />
-
-        <Suspense fallback={<>Loading...</>}>
-          <Outlet />
-        </Suspense>
-      </div>
+      <Suspense fallback={<>Loading...</>}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };
