@@ -1,12 +1,14 @@
 import { Layout } from 'pages/LayoutPage/LayoutPage';
 import { MainPage } from 'pages/MainPage';
 import { MePage } from 'pages/MePage';
+import { NotFoundPage } from 'pages/NotFoundPage';
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
 
 const AppRoutes = {
   ROOT: 'root',
   MAIN: 'main',
-  ME: 'me'
+  ME: 'me',
+  NOT_FOUND: 'not_found'
 } as const;
 
 type RoutePath = (typeof AppRoutes)[keyof typeof AppRoutes];
@@ -14,7 +16,8 @@ type RoutePath = (typeof AppRoutes)[keyof typeof AppRoutes];
 export const RoutePath: Record<RoutePath, string> = {
   [AppRoutes.ROOT]: '/',
   [AppRoutes.MAIN]: '',
-  [AppRoutes.ME]: '/me'
+  [AppRoutes.ME]: '/me',
+  [AppRoutes.NOT_FOUND]: '*'
 } as const;
 
 const routeConfig: Record<RoutePath, RouteObject> = {
@@ -29,11 +32,15 @@ const routeConfig: Record<RoutePath, RouteObject> = {
   [AppRoutes.MAIN]: {
     path: RoutePath.main,
     element: <MainPage />
+  },
+  [AppRoutes.NOT_FOUND]: {
+    path: RoutePath.not_found,
+    element: <NotFoundPage />
   }
 } as const;
 
 const returnRoutes = (): RouteObject => {
-  const { root, main, me } = routeConfig;
+  const { root, main, me, not_found } = routeConfig;
 
   return {
     path: root.path,
@@ -46,6 +53,10 @@ const returnRoutes = (): RouteObject => {
       {
         path: me.path,
         element: me.element
+      },
+      {
+        path: not_found.path,
+        element: not_found.element
       }
     ]
   };

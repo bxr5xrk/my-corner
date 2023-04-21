@@ -1,5 +1,8 @@
 {
   "home": "Home",
   "language": "English",
-  "cabinet": "Cabinet"
+  "cabinet": "Cabinet",
+  "pane-not-found": "Page not found",
+  "go-back-home": "Go back home",
+  "we-coudnt-find-page": "Sorry, we couldn't find the page you're looking for."
 }
