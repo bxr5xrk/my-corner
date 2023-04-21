@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { cl } from 'shared/lib/cl';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { Toggle } from './Toggle';
@@ -11,9 +12,16 @@ const SIDEBAR_MIN_WIDTH = 50;
 const SIDEBAR_MAX_WIDTH = 300;
 
 export const Sidebar = ({ className }: SidebarProps) => {
+  const { t, i18n } = useTranslation();
   const [isCollapsed, setIsCollapsed] = useState(false);
 
-  const onToggle = () => setIsCollapsed((prev) => !prev);
+  const onToggle = async () => setIsCollapsed((prev) => !prev);
+
+  const onChangeLanguage = () => {
+    const newLang = i18n.language === 'uk' ? 'en' : 'uk';
+    localStorage.setItem('i18nextLng', newLang);
+    i18n.changeLanguage(newLang);
+  };
 
   return (
     <aside
@@ -25,7 +33,10 @@ export const Sidebar = ({ className }: SidebarProps) => {
     >
       <Toggle onToggle={onToggle} isCollapsed={isCollapsed} />
 
-      <div></div>
+      <div>
+        <p onClick={onChangeLanguage}>{t('switch')}</p>
+        <p>{t('home')}</p>
+      </div>
 
       <ThemeSwitcher />
     </aside>
