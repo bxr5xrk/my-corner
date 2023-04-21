@@ -9,7 +9,7 @@ interface ToggleProps {
 export const Toggle = ({ isCollapsed, onToggle }: ToggleProps) => {
   return (
     <Button
-      className="opacity-0 duration-300 transition-opacity group-hover:opacity-100 absolute top-2 border border-secondary-200 -right-3 p-1 rounded-full bg-secondary-50 flex items-center justify-center"
+      className="absolute -right-3 top-2 flex items-center justify-center rounded-full border border-secondary-200 bg-secondary-50 p-1 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
       onClick={onToggle}
       theme="clear"
     >

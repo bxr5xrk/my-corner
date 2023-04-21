@@ -6,30 +6,30 @@ import { createBrowserRouter, RouteObject } from 'react-router-dom';
 const AppRoutes = {
   ROOT: 'root',
   MAIN: 'main',
-  ME: 'me',
+  ME: 'me'
 } as const;
 
-type RoutePath = typeof AppRoutes[keyof typeof AppRoutes];
+type RoutePath = (typeof AppRoutes)[keyof typeof AppRoutes];
 
 export const RoutePath: Record<RoutePath, string> = {
   [AppRoutes.ROOT]: '/',
   [AppRoutes.MAIN]: '',
-  [AppRoutes.ME]: '/me',
+  [AppRoutes.ME]: '/me'
 } as const;
 
 const routeConfig: Record<RoutePath, RouteObject> = {
   [AppRoutes.ROOT]: {
     path: RoutePath.root,
-    element: <Layout />,
+    element: <Layout />
   },
   [AppRoutes.ME]: {
     path: RoutePath.me,
-    element: <MePage />,
+    element: <MePage />
   },
   [AppRoutes.MAIN]: {
     path: RoutePath.main,
-    element: <MainPage />,
-  },
+    element: <MainPage />
+  }
 } as const;
 
 const returnRoutes = (): RouteObject => {
@@ -41,13 +41,13 @@ const returnRoutes = (): RouteObject => {
     children: [
       {
         path: main.path,
-        element: main.element,
+        element: main.element
       },
       {
         path: me.path,
-        element: me.element,
-      },
-    ],
+        element: me.element
+      }
+    ]
   };
 };
 

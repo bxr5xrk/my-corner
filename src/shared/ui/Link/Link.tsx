@@ -21,7 +21,7 @@ export const Link = ({
       className={cl(
         'p-2',
         theme === 'primary' && '',
-        theme === 'bordered' && 'border rounded-md',
+        theme === 'bordered' && 'rounded-md border',
         className
       )}
       {...props}

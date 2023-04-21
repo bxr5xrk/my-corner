@@ -11,11 +11,11 @@ export const Layout = () => {
   return (
     <div
       className={cl(
-        'w-screen h-screen min-h-screen bg-secondary-50 text-secondary-900 overflow-y-auto',
+        'h-screen min-h-screen w-screen overflow-y-auto bg-secondary-50 text-secondary-900',
         theme
       )}
     >
-      <div className="space-y-2 h-full flex flex-col mx-auto max-w-7xl">
+      <div className="mx-auto flex h-full max-w-7xl flex-col space-y-2">
         <Navbar />
 
         <div className="flex h-full w-full gap-10">

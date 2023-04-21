@@ -3,7 +3,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import {
   HotModuleReplacementPlugin,
   ProgressPlugin,
-  WebpackPluginInstance,
+  WebpackPluginInstance
 } from 'webpack';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 
@@ -13,13 +13,13 @@ export default function buildPlugins(
 ): WebpackPluginInstance[] {
   return [
     new HtmlWebpackPlugin({
-      template: path,
+      template: path
     }),
     new ProgressPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash:8].css',
+      filename: 'css/[name].[contenthash:8].css'
     }),
     isDev ? new ReactRefreshWebpackPlugin() : null,
-    isDev ? new HotModuleReplacementPlugin() : null,
+    isDev ? new HotModuleReplacementPlugin() : null
   ].filter(Boolean);
 }

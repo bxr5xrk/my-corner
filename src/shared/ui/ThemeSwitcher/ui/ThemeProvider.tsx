@@ -3,7 +3,7 @@ import {
   LS_THEME_KEY,
   Theme,
   ThemeContext,
-  ThemeType,
+  ThemeType
 } from '../lib/ThemeContext';
 
 interface ThemeProviderProps {

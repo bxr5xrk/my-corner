@@ -19,15 +19,15 @@ export default function buildWebpackConfig(
     output: {
       filename: '[name].[contenthash].js',
       path: build,
-      clean: true,
+      clean: true
     },
     module: {
-      rules: buildLoaders(src),
+      rules: buildLoaders(src)
     },
     resolve: buildResolvers(src),
     plugins: buildPlugins(html, isDev),
 
     devServer: isDev ? BuildDevServer(port) : undefined,
-    devtool: isDev ? 'inline-source-map' : undefined,
+    devtool: isDev ? 'inline-source-map' : undefined
   };
 }

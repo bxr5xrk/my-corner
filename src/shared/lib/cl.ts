@@ -1,5 +1,7 @@
 export const cl = (
-  ...classes: Array<string | undefined | boolean | null | Record<string, any>>
+  ...classes: Array<
+    string | undefined | boolean | null | Record<string, unknown>
+  >
 ): string =>
   classes
     .map((i) =>

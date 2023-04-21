@@ -20,11 +20,11 @@ i18n
     debug: process.env.NODE_ENV === 'development',
 
     interpolation: {
-      escapeValue: false,
+      escapeValue: false
     },
     backend: {
-      loadPath: '/locales/{{lng}}/{{ns}}.json',
-    },
+      loadPath: '/locales/{{lng}}/{{ns}}.json'
+    }
   });
 
 export default i18n;

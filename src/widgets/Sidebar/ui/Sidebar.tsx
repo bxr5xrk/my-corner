@@ -1,18 +1,13 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { cl } from 'shared/lib/cl';
 import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { Toggle } from './Toggle';
 
-interface SidebarProps {
-  className?: string;
-}
+const SIDEBAR_MIN_WIDTH = 56;
+const SIDEBAR_MAX_WIDTH = 288;
 
-const SIDEBAR_MIN_WIDTH = 50;
-const SIDEBAR_MAX_WIDTH = 300;
-
-export const Sidebar = ({ className }: SidebarProps) => {
+export const Sidebar = () => {
   const { t } = useTranslation();
   const [isCollapsed, setIsCollapsed] = useState(false);
 
@@ -21,10 +16,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
   return (
     <aside
       style={{ width: isCollapsed ? SIDEBAR_MIN_WIDTH : SIDEBAR_MAX_WIDTH }}
-      className={cl(
-        'group relative h-[98%] transition-all duration-300 rounded-md border border-secondary-200 bg-secondary-100 p-4 flex flex-col justify-between',
-        className
-      )}
+      className="group relative flex h-[98%] flex-col justify-between rounded-md border border-secondary-200 bg-secondary-100 p-4 transition-all duration-300"
     >
       <Toggle onToggle={onToggle} isCollapsed={isCollapsed} />
 

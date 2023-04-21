@@ -13,9 +13,9 @@ export const ThemeSwitcher = ({ isCollapsed }: ThemeSwitcherProps) => {
   return (
     <Button onClick={toggleTheme} className="flex items-center gap-5">
       {theme === 'dark-theme' ? (
-        <Moon className="w-5 h-5 stroke-current" />
+        <Moon className="h-5 w-5 stroke-current" />
       ) : (
-        <Sun className="w-5 h-5 stroke-current" />
+        <Sun className="h-5 w-5 stroke-current" />
       )}
 
       {!isCollapsed ? (
