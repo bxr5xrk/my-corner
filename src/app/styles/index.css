@@ -6,6 +6,24 @@
 
 @layer base {
   body {
-    @apply font-fira min-h-screen;
+    @apply min-h-screen font-fira;
   }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(180, 180, 180);
+  border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(153, 153, 153);
 }

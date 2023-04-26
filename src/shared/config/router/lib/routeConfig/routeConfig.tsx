@@ -1,4 +1,4 @@
-import { Layout } from 'pages/LayoutPage/LayoutPage';
+import { Layout } from 'app/layout';
 import { HomePage } from 'pages/HomePage';
 import { MePage } from 'pages/MePage';
 import { NotFoundPage } from 'pages/NotFoundPage';
