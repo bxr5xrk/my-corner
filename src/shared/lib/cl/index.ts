@@ -1,2 +1,2 @@
-import { cl } from './lib/cl';
+import { cl } from './cl';
 export { cl };

@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import { cl } from 'shared/lib/cl';
+import { cl } from 'shared/lib/cl/cl';
 import { useTheme } from 'shared/ui/ThemeSwitcher';
 import { Navbar } from 'widgets/Navbar';
 
