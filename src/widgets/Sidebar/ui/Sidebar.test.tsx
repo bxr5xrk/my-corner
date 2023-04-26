@@ -3,11 +3,6 @@ import renderWithTranslation from 'shared/lib/tests/renderWithTranslation/render
 import { Sidebar } from './Sidebar';
 
 describe('Sidebar', () => {
-  // it('first', () => {
-  //   renderWithTranslation(<Sidebar />);
-  //   expect(screen.getByTestId('sidebar')).toBeInTheDocument();
-  // });
-
   it('renders toggle, lang switcher and theme switcher buttons', () => {
     const { getByTestId, getByRole } = renderWithTranslation(<Sidebar />);
 

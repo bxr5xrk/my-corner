@@ -18,7 +18,7 @@ export const Button = ({
   return (
     <button
       className={cl(
-        'cursor-pointer',
+        'cursor-pointer bg-primary-500',
         theme === 'primary' && 'border p-2',
         theme === 'clear' && '',
         className
