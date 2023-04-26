@@ -12,4 +12,5 @@ export interface BuildOptions {
   paths: BuildPaths;
   isDev: boolean;
   port: number;
+  analyze: 1 | 0;
 }

@@ -1,15 +1,17 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import {
-  HotModuleReplacementPlugin,
+  // HotModuleReplacementPlugin,
   ProgressPlugin,
   WebpackPluginInstance
 } from 'webpack';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 export default function buildPlugins(
   path: string,
-  isDev: boolean
+  isDev: boolean,
+  analyze: 1 | 0
 ): WebpackPluginInstance[] {
   return [
     new HtmlWebpackPlugin({
@@ -19,7 +21,11 @@ export default function buildPlugins(
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:8].css'
     }),
-    isDev ? new ReactRefreshWebpackPlugin() : null,
-    isDev ? new HotModuleReplacementPlugin() : null
+    analyze &&
+      new BundleAnalyzerPlugin({
+        openAnalyzer: false
+      }),
+    isDev ? new ReactRefreshWebpackPlugin() : null
+    // isDev ? new HotModuleReplacementPlugin() : null
   ].filter(Boolean);
 }

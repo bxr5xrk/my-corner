@@ -8,3 +8,5 @@ Tech Stack:
 - i18n (internationalization)
 - Jest (unit tests)
 - Webpack (builder)
+
+- Bundle analyzer

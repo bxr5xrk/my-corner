@@ -15,6 +15,7 @@ export default () => {
 
   const mode = (process.env.NODE_ENV as BuildMode) ?? 'development';
   const PORT = Number(process.env.PORT) ?? 3000;
+  const analyze = (Number(process.env.ANALYZE) as 1 | 0) ?? 0;
 
   const isDev = mode === 'development';
 
@@ -22,7 +23,8 @@ export default () => {
     mode,
     paths,
     isDev,
-    port: PORT
+    port: PORT,
+    analyze
   });
 
   return config;
