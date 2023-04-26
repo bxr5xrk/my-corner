@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import ThemeDecorator from 'shared/config/storybook/ThemeDecorator';
 import { Button } from './Button';
 
 const meta = {
@@ -21,9 +22,18 @@ export const Primary: Story = {
   }
 };
 
-export const Clear: Story = {
+export const ClearLight: Story = {
   args: {
     theme: 'clear',
     children: 'Click me'
-  }
+  },
+  decorators: [ThemeDecorator('light-theme')]
+};
+
+export const ClearDark: Story = {
+  args: {
+    theme: 'clear',
+    children: 'Click me'
+  },
+  decorators: [ThemeDecorator('dark-theme')]
 };
