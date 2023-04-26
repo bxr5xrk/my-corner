@@ -20,8 +20,11 @@ const config: Config = {
   rootDir: '../../',
   testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
   transform: {
-    '^.+\\.[tj]s?(x)?$': 'ts-jest'
-  }
+    '^.+\\.[tj]s?(x)?$': 'ts-jest',
+    '^.+\\.svg$': '<rootDir>config/jest/transformers/svg.js'
+  },
+  setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
+  modulePaths: ['<rootDir>src']
 };
 
 export default config;
