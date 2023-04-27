@@ -2,10 +2,11 @@ name: Lint, Format, Unit test, Build
 on: 
   push:
     branches: [ main ]
-  pull_requests: 
+  pull_request: 
     branches:  [ main ]
+
 jobs:
-  pipeline: 
+  build: 
     runs-on: ubuntu-latest
     strategy:
       matrix:
