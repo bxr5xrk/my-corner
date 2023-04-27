@@ -16,7 +16,9 @@
     "format:fix": "clear && prettier --write 'src/**/*.{ts,tsx,js}' --config .prettierrc.js",
     "test:unit": "clear && jest --config ./config/jest/jest.config.ts",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
-    "build-storybook": "storybook build -c ./config/storybook"
+    "build-storybook": "storybook build -c ./config/storybook",
+    "test:ui": "npx chromatic",
+    "test:ui:ok": "npx chromatic --auto-accept-changes"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.21.4",
@@ -43,6 +45,7 @@
     "@types/webpack-dev-server": "^4.7.2",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "@typescript-eslint/parser": "^5.59.0",
+    "chromatic": "^6.17.3",
     "css-loader": "^6.7.3",
     "cssnano": "^6.0.0",
     "eslint": "^8.38.0",
