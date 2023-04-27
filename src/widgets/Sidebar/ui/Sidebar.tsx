@@ -22,7 +22,7 @@ export const Sidebar = () => {
 
       <div>{!isCollapsed ? <p>{t('home')}</p> : null}</div>
 
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col space-y-2">
         <LangSwitcher isCollapsed={isCollapsed} />
         <ThemeSwitcher isCollapsed={isCollapsed} />
       </div>
