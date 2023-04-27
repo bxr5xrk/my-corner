@@ -1,5 +1,5 @@
 name: Lint, Format, Unit test, Build
-run-name: ${{ github.actor }} GitHub Actions 🚀
+
 on:
   push:
     branches:
@@ -14,16 +14,15 @@ jobs:
     strategy:
       matrix:
         node-version: [17.x]
-
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: install dependencies
-      - run: yarn
-      - name: build production
-      - run: yarn build
-       - name: echo example
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - name: Install Dependencies
+        run: yarn
+      - name: Build Production
+        run: yarn build
+      - name: Echo Example
+        run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
