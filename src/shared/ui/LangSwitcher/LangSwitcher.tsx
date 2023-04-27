@@ -1,5 +1,6 @@
 import { LanguageIcon } from '@heroicons/react/24/outline';
 import { useTranslation } from 'react-i18next';
+import { cl } from 'shared/lib/cl';
 import { Button } from '../Button/Button';
 
 interface LangSwitcherProps {
@@ -21,9 +22,18 @@ export const LangSwitcher = ({ isCollapsed }: LangSwitcherProps) => {
       theme="clear"
       className="flex items-center gap-5"
     >
-      <LanguageIcon className="h-5 w-5" aria-hidden="true" />
+      <span>
+        <LanguageIcon className="h-5 w-5" aria-hidden="true" />
+      </span>
 
-      {!isCollapsed ? <span>{t('language')}</span> : null}
+      <span
+        className={cl(
+          isCollapsed ? 'invisible opacity-0' : 'visible opacity-100',
+          'transition-all duration-500'
+        )}
+      >
+        {t('language')}
+      </span>
     </Button>
   );
 };

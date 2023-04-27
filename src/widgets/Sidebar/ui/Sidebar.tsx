@@ -11,12 +11,12 @@ export const Sidebar = () => {
   const { t } = useTranslation();
   const [isCollapsed, setIsCollapsed] = useState(false);
 
-  const onToggle = async () => setIsCollapsed((prev) => !prev);
+  const onToggle = () => setIsCollapsed((prev) => !prev);
 
   return (
     <aside
       style={{ width: isCollapsed ? SIDEBAR_MIN_WIDTH : SIDEBAR_MAX_WIDTH }}
-      className="group sticky top-20 flex h-fit min-h-[300px] flex-col justify-between rounded-md border border-secondary-200 bg-secondary-100 p-4 transition-all duration-300"
+      className="group sticky top-20 flex h-fit min-h-[300px] flex-col justify-between rounded-md border border-secondary-200 bg-secondary-100 p-4 transition-all duration-500"
     >
       <Toggle onToggle={onToggle} isCollapsed={isCollapsed} />
 
