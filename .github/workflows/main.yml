@@ -1,9 +1,9 @@
 name: Lint, Format, Unit test, Build
 on: 
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_requests: 
-    branches:  [ master ]
+    branches:  [ main ]
 jobs:
   pipeline: 
     runs-on: ubuntu-latest
