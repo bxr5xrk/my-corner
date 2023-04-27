@@ -1,0 +1,27 @@
+name: Lint, Format, Unit test, Build
+on: 
+  push:
+    branches: [ master ]
+  pull_requests: 
+    branches:  [ master ]
+jobs:
+  pipeline: 
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+      node: [ 17.x ]
+     steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - name: install dependencies
+      - run: yarn
+      - name: build production
+      - run: yarn build
+      - name: lint check
+      - run: yarn lint:check
+      - name: format check
+      - run: yarn format:check
+   

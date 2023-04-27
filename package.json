@@ -8,15 +8,14 @@
   "license": "ISC",
   "scripts": {
     "dev": "webpack serve",
-    "build": "webpack",
-    "ts:check": "clear && tsc --allowJS false --pretty --strict true",
+    "build": "NODE_ENV=production webpack",
     "lint:check": "clear && eslint 'src/**/*.{ts,tsx,js}' --config .eslintrc.js",
     "lint:fix": "clear && eslint 'src/**/*.{ts,tsx,js}' --config .eslintrc.js --fix",
     "format:check": "clear && prettier --check 'src/**/*.{ts,tsx,js}' --config .prettierrc.js",
     "format:fix": "clear && prettier --write 'src/**/*.{ts,tsx,js}' --config .prettierrc.js",
     "test:unit": "clear && jest --config ./config/jest/jest.config.ts",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
-    "build-storybook": "storybook build -c ./config/storybook",
+    "storybook:build": "storybook build -c ./config/storybook",
     "test:ui": "npx chromatic",
     "test:ui:ok": "npx chromatic --auto-accept-changes"
   },
