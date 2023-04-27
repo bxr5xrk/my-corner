@@ -17,7 +17,8 @@
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook",
     "test:ui": "npx chromatic",
-    "test:ui:ok": "npx chromatic --auto-accept-changes"
+    "test:ui:ok": "npx chromatic --auto-accept-changes",
+    "test:ui:ci": "chromatic --exit-zero-on-changes"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.21.4",

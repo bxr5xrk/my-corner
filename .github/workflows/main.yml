@@ -28,4 +28,7 @@ jobs:
         run: yarn lint:check
       - name: format check
         run: yarn format:check
-
+      - name: unit tests
+        run: yarn test:unit
+      - name: ui tests
+        run: yarn test:ui:ci
