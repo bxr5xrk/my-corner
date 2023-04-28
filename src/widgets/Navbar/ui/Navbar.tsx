@@ -22,7 +22,20 @@ export default function Navbar() {
           Auth
         </Button>
 
-        <Modal show={showAuthModal} onClose={() => setShowAuthModal(false)} />
+        {/* auth modal */}
+        <Modal show={showAuthModal} onClose={() => setShowAuthModal(false)}>
+          <Modal.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-secondary-100 p-4 text-left align-middle text-secondary-900 shadow-xl transition-all">
+            <Modal.Title as="h3" className="text-lg font-medium leading-6">
+              Auth
+            </Modal.Title>
+            <div className="mt-2">
+              <p className="text-sm text-primary-500">
+                Your payment has been successfully submitted. We’ve sent you an
+                email with all of the details of your order.
+              </p>
+            </div>
+          </Modal.Panel>
+        </Modal>
       </div>
     </header>
   );

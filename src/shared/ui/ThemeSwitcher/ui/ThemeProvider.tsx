@@ -1,4 +1,4 @@
-import { ReactNode, useMemo, useState } from 'react';
+import { ReactNode, useEffect, useMemo, useState } from 'react';
 import {
   LS_THEME_KEY,
   Theme,
@@ -15,6 +15,10 @@ const themeFromLS =
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const [theme, setTheme] = useState<ThemeType>(themeFromLS);
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, []);
 
   const defaultProps = useMemo(() => ({ theme, setTheme }), [theme]);
 

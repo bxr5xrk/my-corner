@@ -1,12 +1,13 @@
 import { Dialog, Transition } from '@headlessui/react';
-import { Fragment } from 'react';
+import { Fragment, ReactNode } from 'react';
 
 interface ModalProps {
   show: boolean;
   onClose: () => void;
+  children: ReactNode;
 }
 
-export const Modal = ({ show, onClose }: ModalProps) => {
+export const Modal = ({ show, onClose, children }: ModalProps) => {
   return (
     <Transition appear show={show} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={onClose}>
@@ -33,17 +34,7 @@ export const Modal = ({ show, onClose }: ModalProps) => {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-primary-500 p-6 text-left align-middle shadow-xl transition-all">
-                <Dialog.Title as="h3" className="text-lg font-medium leading-6">
-                  Auth
-                </Dialog.Title>
-                <div className="mt-2">
-                  <p className="text-sm text-primary-500">
-                    Your payment has been successfully submitted. We’ve sent you
-                    an email with all of the details of your order.
-                  </p>
-                </div>
-              </Dialog.Panel>
+              {children}
             </Transition.Child>
           </div>
         </div>
@@ -51,3 +42,6 @@ export const Modal = ({ show, onClose }: ModalProps) => {
     </Transition>
   );
 };
+
+Modal.Panel = Dialog.Panel;
+Modal.Title = Dialog.Title;
