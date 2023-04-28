@@ -8,6 +8,9 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
     isCollapsed: { control: 'boolean' }
+  },
+  parameters: {
+    chromatic: { disableSnapshot: false }
   }
 } satisfies Meta<typeof ThemeSwitcher>;
 

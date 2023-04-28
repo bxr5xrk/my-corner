@@ -9,6 +9,9 @@ const meta = {
   argTypes: {
     className: { control: 'text' },
     theme: { control: 'select', options: ['clear', 'primary'] }
+  },
+  parameters: {
+    chromatic: { disableSnapshot: false }
   }
 } satisfies Meta<typeof Button>;
 

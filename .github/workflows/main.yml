@@ -39,3 +39,86 @@ jobs:
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
         run: yarn test:ui:ci
+
+# name: Test and Build
+
+# on:
+#   push:
+#     branches:
+#       - main
+#   pull_request:
+#     branches:
+#       - main
+
+# jobs:
+#   lint:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#         with:
+#           fetch-depth: 0
+#       - name: Install Dependencies
+#         run: yarn
+#       - name: Lint Check
+#         run: yarn lint:check
+
+#   format:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#         with:
+#           fetch-depth: 0
+#       - name: Install Dependencies
+#         run: yarn
+#       - name: Format Check
+#         run: yarn format:check
+
+#   unit-test:
+#     runs-on: ubuntu-latest
+#     strategy:
+#       matrix:
+#         node-version: [18.x]
+#     steps:
+#       - uses: actions/checkout@v2
+#         with:
+#           fetch-depth: 0
+#       - name: Use Node.js ${{ matrix.node-version }}
+#         uses: actions/setup-node@v1
+#         with:
+#           node-version: ${{ matrix.node-version }}
+#       - name: Install Dependencies
+#         run: yarn
+#       - name: Unit Tests
+#         run: yarn test:unit
+
+#   build:
+#     runs-on: ubuntu-latest
+#     strategy:
+#       matrix:
+#         node-version: [18.x]
+#     steps:
+#       - uses: actions/checkout@v2
+#         with:
+#           fetch-depth: 0
+#       - name: Use Node.js ${{ matrix.node-version }}
+#         uses: actions/setup-node@v1
+#         with:
+#           node-version: ${{ matrix.node-version }}
+#       - name: Install Dependencies
+#         run: yarn
+#       - name: Build Production
+#         run: yarn build
+
+#   ui-test:
+#     needs: build
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#         with:
+#           fetch-depth: 0
+#       - name: Install Dependencies
+#         run: yarn
+#       - name: UI Tests
+#         env:
+#           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+#         run: yarn test:ui:ci

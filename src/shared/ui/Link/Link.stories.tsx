@@ -9,6 +9,9 @@ const meta = {
   args: {
     to: '/'
   },
+  parameters: {
+    chromatic: { disableSnapshot: false }
+  },
   argTypes: {}
 } satisfies Meta<typeof Link>;
 
