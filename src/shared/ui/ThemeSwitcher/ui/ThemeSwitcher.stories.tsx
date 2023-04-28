@@ -20,13 +20,15 @@ type Story = StoryObj<typeof meta>;
 export const NotCollapsed: Story = {
   args: {
     isCollapsed: false
-  }
+  },
+  decorators: [ThemeDecorator('dark-theme')]
 };
 
 export const Collapsed: Story = {
   args: {
     isCollapsed: true
-  }
+  },
+  decorators: [ThemeDecorator('dark-theme')]
 };
 
 export const CollapsedLight: Story = {
