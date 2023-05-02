@@ -6,7 +6,9 @@ Tech Stack:
 - Tailwind (theming, styles)
 - Eslint + Prettier (code style)
 - i18n (internationalization)
-- Jest, RTL (unit tests)
+- Jest (unit tests)
+- Storybook, RTL (component tests) 
+- Chromatic (regression tests)
 - Webpack (builder)
 
 - Bundle analyzer
