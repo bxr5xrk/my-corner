@@ -1,10 +1,13 @@
 import { fireEvent } from '@testing-library/react';
-import renderWithTranslation from 'shared/lib/tests/renderWithTranslation/renderWithTranslation';
+import componentRender from 'shared/lib/tests/componentRender';
 import { Sidebar } from './Sidebar';
 
 describe('Sidebar', () => {
   it('renders toggle, lang switcher and theme switcher buttons', () => {
-    const { getByTestId, getByRole } = renderWithTranslation(<Sidebar />);
+    const { getByTestId, getByRole } = componentRender(<Sidebar />, {
+      route: '/',
+      initialState: { counter: { value: 10 } }
+    });
 
     expect(getByTestId('toggle')).toBeInTheDocument();
     expect(getByRole('button', { name: 'language' })).toBeInTheDocument();
@@ -12,7 +15,10 @@ describe('Sidebar', () => {
   });
 
   it('clicking on the toggle button should toggle sidebar collapse state', () => {
-    const { getByTestId, getByRole } = renderWithTranslation(<Sidebar />);
+    const { getByTestId, getByRole } = componentRender(<Sidebar />, {
+      route: '/',
+      initialState: { counter: { value: 10 } }
+    });
 
     const toggleButton = getByTestId('toggle');
     const initialWidthStyle = window
@@ -35,7 +41,10 @@ describe('Sidebar', () => {
   });
 
   it('lang switcher and theme switcher should be hidden when sidebar is collapsed', () => {
-    const { getByRole, getByTestId } = renderWithTranslation(<Sidebar />);
+    const { getByRole, getByTestId } = componentRender(<Sidebar />, {
+      route: '/',
+      initialState: { counter: { value: 10 } }
+    });
 
     const langSwitcher = getByRole('button', {
       name: 'language'

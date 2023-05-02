@@ -13,7 +13,8 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Dark: Story = {
-  args: {}
+  args: {},
+  decorators: [ThemeDecorator('dark-theme')]
 };
 
 export const Light: Story = {
