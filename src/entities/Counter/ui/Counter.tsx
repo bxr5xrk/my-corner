@@ -1,9 +1,9 @@
-import { useAppDispatch } from 'app/providers/StoreProvider';
-import { useCounter } from '../model/counterSelectors';
-import { counterActions } from '../model/counterSlice';
+import { useAppDispatch, useAppSelector } from 'app/providers/StoreProvider';
+import { counterActions } from '../model/slice/counterSlice';
+import { selectCounter } from '../model/selectors/counterSelectors';
 
 export const Counter = () => {
-  const { value: counter } = useCounter();
+  const { value: counter } = useAppSelector(selectCounter);
   const dispatch = useAppDispatch();
 
   const increment = () => dispatch(counterActions.increment());
