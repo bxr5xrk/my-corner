@@ -1,3 +1,4 @@
+import { Counter } from 'entities/Counter';
 import { Page } from 'widgets/Page';
 import { Sidebar } from 'widgets/Sidebar';
 
@@ -9,7 +10,9 @@ export default function HomePage() {
       <section className="w-full border">
         <div>home page</div>
 
-        <div className="flex flex-col gap-20">
+        <Counter />
+
+        {/* <div className="flex flex-col gap-20">
           {[...Array(20)]
             .map((_, i) => i)
             .map((i) => (
@@ -17,7 +20,7 @@ export default function HomePage() {
                 {i}
               </div>
             ))}
-        </div>
+        </div> */}
       </section>
     </Page>
   );
