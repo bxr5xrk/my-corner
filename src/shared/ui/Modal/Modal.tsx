@@ -34,7 +34,9 @@ export const Modal = ({ show, onClose, children }: ModalProps) => {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              {children}
+              <Modal.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-secondary-100 p-4 text-left align-middle text-secondary-900 shadow-xl transition-all">
+                {children}
+              </Modal.Panel>
             </Transition.Child>
           </div>
         </div>

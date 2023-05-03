@@ -1,9 +1,9 @@
+import { LoginModal } from 'features/AuthByUsername';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { RoutePath } from 'shared/config/router/routePaths';
 import { Button } from 'shared/ui/Button/Button';
 import { Link } from 'shared/ui/Link/Link';
-import { Modal } from 'shared/ui/Modal/Modal';
 
 export default function Navbar() {
   const { t } = useTranslation();
@@ -23,7 +23,7 @@ export default function Navbar() {
         </Button>
 
         {/* auth modal */}
-        <Modal show={showAuthModal} onClose={() => setShowAuthModal(false)}>
+        {/* <Modal show={showAuthModal} onClose={() => setShowAuthModal(false)}>
           <Modal.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-secondary-100 p-4 text-left align-middle text-secondary-900 shadow-xl transition-all">
             <Modal.Title as="h3" className="text-lg font-medium leading-6">
               Auth
@@ -35,7 +35,12 @@ export default function Navbar() {
               </p>
             </div>
           </Modal.Panel>
-        </Modal>
+        </Modal> */}
+
+        <LoginModal
+          show={showAuthModal}
+          onClose={() => setShowAuthModal(false)}
+        />
       </div>
     </header>
   );

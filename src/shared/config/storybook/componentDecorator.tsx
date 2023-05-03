@@ -5,7 +5,12 @@ import { BrowserRouter } from 'react-router-dom';
 export default function componentDecorator(Story: any) {
   return (
     <BrowserRouter>
-      <StoreProvider initialState={{ counter: { value: 1 } }}>
+      <StoreProvider
+        initialState={{
+          counter: { value: 10 },
+          user: { authData: null }
+        }}
+      >
         {Story()}
       </StoreProvider>
     </BrowserRouter>
