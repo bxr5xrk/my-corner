@@ -9,7 +9,13 @@ export default function componentDecorator(Story: any) {
         initialState={{
           counter: { value: 10 },
           user: { authData: null },
-          authApi: null
+          authApi: {
+            mutations: {},
+            queries: {},
+            provided: {},
+            subscriptions: {},
+            config: null
+          }
         }}
       >
         {Story()}

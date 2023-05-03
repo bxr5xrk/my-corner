@@ -1,5 +1,5 @@
 import { useAppDispatch } from 'app/providers/StoreProvider';
-import { userActions } from 'entities/User/model/slice/userSlice';
+import { LS_USER_KEY, userActions } from 'entities/User/model/slice/userSlice';
 import { useLogin } from 'features/AuthByUsername';
 import { FormEvent, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -31,9 +31,9 @@ export const LoginForm = ({ onClose }: LoginFormProps) => {
 
   useEffect(() => {
     if (data) {
-      dispatch(
-        userActions.setAuthData({ id: data.id, username: data.username })
-      );
+      const authData = { id: data.id, username: data.username };
+      dispatch(userActions.setAuthData(authData));
+      localStorage.setItem(LS_USER_KEY, JSON.stringify(authData));
       onClose();
     }
 
