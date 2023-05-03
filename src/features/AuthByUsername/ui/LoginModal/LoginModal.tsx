@@ -9,7 +9,7 @@ interface LoginModalProps {
 export const LoginModal = ({ show, onClose }: LoginModalProps) => {
   return (
     <Modal show={show} onClose={onClose}>
-      <LoginForm />
+      <LoginForm onClose={onClose} />
     </Modal>
   );
 };

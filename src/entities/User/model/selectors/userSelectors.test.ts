@@ -10,7 +10,8 @@ describe('selectUser selector', () => {
           username: 'admin',
           id: 1
         }
-      }
+      },
+      authApi: null
     };
     const user = selectUser(mockState);
 

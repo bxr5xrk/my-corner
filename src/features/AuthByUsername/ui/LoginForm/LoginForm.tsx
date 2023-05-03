@@ -1,24 +1,47 @@
-import { FormEvent, useRef } from 'react';
+import { useAppDispatch } from 'app/providers/StoreProvider';
+import { userActions } from 'entities/User/model/slice/userSlice';
+import { useLogin } from 'features/AuthByUsername';
+import { FormEvent, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 
-export const LoginForm = () => {
+interface LoginFormProps {
+  onClose: VoidFunction;
+}
+
+export const LoginForm = ({ onClose }: LoginFormProps) => {
+  const dispatch = useAppDispatch();
   const { t } = useTranslation();
+  const errorRef = useRef<HTMLParagraphElement>(null);
   const usernameRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
+  const [onLogin, { data, error, isLoading }] = useLogin({});
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (usernameRef.current && passwordRef.current) {
       const username = usernameRef.current.value;
       const password = passwordRef.current.value;
 
-      // eslint-disable-next-line no-console
-      console.log({ username, password });
+      onLogin({ username, password });
     }
   };
+
+  useEffect(() => {
+    if (data) {
+      dispatch(
+        userActions.setAuthData({ id: data.id, username: data.username })
+      );
+      onClose();
+    }
+
+    if (error) {
+      const errorMessage = error as { data: { message: string } };
+      errorRef.current.textContent = errorMessage.data.message;
+    }
+  }, [data, error]);
 
   return (
     <form onSubmit={onSubmit}>
@@ -42,7 +65,16 @@ export const LoginForm = () => {
           type="password"
         />
 
-        <Button type="submit">{t('log-in')}</Button>
+        <p className="text-center text-sm text-red-500" ref={errorRef}></p>
+
+        <Button
+          className="w-full"
+          theme="primary"
+          isLoading={isLoading}
+          type="submit"
+        >
+          {t('log-in')}
+        </Button>
       </div>
     </form>
   );
