@@ -18,7 +18,8 @@
     "build-storybook": "storybook build -c ./config/storybook",
     "test:ui": "npx chromatic",
     "test:ui:ok": "npx chromatic --auto-accept-changes",
-    "test:ui:ci": "npx chromatic --exit-zero-on-changes"
+    "test:ui:ci": "npx chromatic --exit-zero-on-changes",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.21.4",
@@ -73,7 +74,8 @@
     "webpack": "^5.77.0",
     "webpack-bundle-analyzer": "^4.8.0",
     "webpack-cli": "^5.0.1",
-    "webpack-dev-server": "^4.13.2"
+    "webpack-dev-server": "^4.13.2",
+    "husky": "^8.0.0"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.14",
