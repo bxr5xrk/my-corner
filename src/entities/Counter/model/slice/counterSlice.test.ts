@@ -1,6 +1,6 @@
 import reducer, { counterActions } from './counterSlice';
 
-describe('Counter Reducer', () => {
+describe('Counter reducer', () => {
   it('should return the initial state', () => {
     const expectedInitialState = { value: 0 };
     expect(reducer(undefined, { type: '' })).toEqual(expectedInitialState);
