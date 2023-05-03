@@ -9,8 +9,9 @@ describe('User reducer', () => {
 
   it('should set authData to null with setAuthData action', () => {
     const prevState: UserSchema = { authData: null };
-    const action = userActions.setAuthData();
+    const mockedUser = { username: 'admin', id: 1 };
+    const action = userActions.setAuthData(mockedUser);
     const nextState = reducer(prevState, action);
-    expect(nextState).toEqual({ authData: null });
+    expect(nextState).toEqual({ authData: mockedUser });
   });
 });
