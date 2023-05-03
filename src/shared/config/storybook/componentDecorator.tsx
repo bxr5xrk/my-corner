@@ -8,7 +8,8 @@ export default function componentDecorator(Story: any) {
       <StoreProvider
         initialState={{
           counter: { value: 10 },
-          user: { authData: null }
+          user: { authData: null },
+          authApi: null
         }}
       >
         {Story()}

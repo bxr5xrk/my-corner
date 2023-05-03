@@ -10,6 +10,7 @@ Tech Stack:
 - Storybook, RTL (component tests) 
 - Chromatic (regression tests)
 - Github Actions (CI pipeline)
+- Husky (pre-commit hooks)
 - Webpack (builder)
 
 - Bundle analyzer
