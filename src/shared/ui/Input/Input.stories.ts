@@ -1,51 +1,53 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import ThemeDecorator from 'shared/config/storybook/ThemeDecorator';
-import { Link } from './Link';
+import { Input } from './Input';
 
 const meta = {
-  title: 'shared/Link',
-  component: Link,
+  title: 'shared/Input',
+  component: Input,
   tags: ['autodocs'],
-  args: {
-    to: '/'
-  },
+  argTypes: {},
   parameters: {
     chromatic: { disableSnapshot: true }
-  },
-  argTypes: {}
-} satisfies Meta<typeof Link>;
+  }
+} satisfies Meta<typeof Input>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const PrimaryDark: Story = {
+export const DefaultDark: Story = {
   args: {
-    theme: 'primary',
-    children: 'Link'
+    type: 'text',
+    placeholder: 'text',
+    label: 'Text'
   },
   decorators: [ThemeDecorator('dark-theme')]
 };
 
-export const PrimaryLight: Story = {
+export const DefaultLight: Story = {
   args: {
-    theme: 'primary',
-    children: 'Link'
+    type: 'text',
+    placeholder: 'text',
+    label: 'Text'
   },
+
   decorators: [ThemeDecorator('light-theme')]
 };
 
-export const BorderedDark: Story = {
+export const PasswordDark: Story = {
   args: {
-    theme: 'bordered',
-    children: 'Link'
+    type: 'password',
+    placeholder: 'text',
+    label: 'Text'
   },
   decorators: [ThemeDecorator('dark-theme')]
 };
 
-export const BorderedLight: Story = {
+export const PasswordLight: Story = {
   args: {
-    theme: 'bordered',
-    children: 'Link'
+    type: 'password',
+    placeholder: 'text',
+    label: 'Text'
   },
   decorators: [ThemeDecorator('light-theme')]
 };

@@ -7,7 +7,7 @@ import { ThemeType } from 'shared/ui/ThemeSwitcher/lib/ThemeContext';
 const ThemeDecorator = (theme: ThemeType) => (Story: any) => {
   return (
     <ThemeProvider initialTheme={theme}>
-      <div className={cl(theme, 'bg-secondary-50 text-secondary-900')}>
+      <div className={cl(theme, 'bg-secondary-50 p-5 text-secondary-900')}>
         <Story />
       </div>
     </ThemeProvider>

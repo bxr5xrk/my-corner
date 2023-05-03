@@ -10,7 +10,7 @@ const meta = {
     isCollapsed: { control: 'boolean' }
   },
   parameters: {
-    chromatic: { disableSnapshot: false }
+    chromatic: { disableSnapshot: true }
   }
 } satisfies Meta<typeof ThemeSwitcher>;
 

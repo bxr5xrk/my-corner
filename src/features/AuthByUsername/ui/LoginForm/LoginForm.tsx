@@ -15,6 +15,7 @@ export const LoginForm = () => {
       const username = usernameRef.current.value;
       const password = passwordRef.current.value;
 
+      // eslint-disable-next-line no-console
       console.log({ username, password });
     }
   };

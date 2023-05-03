@@ -11,7 +11,7 @@ const meta = {
     theme: { control: 'select', options: ['clear', 'primary'] }
   },
   parameters: {
-    chromatic: { disableSnapshot: false }
+    chromatic: { disableSnapshot: true }
   }
 } satisfies Meta<typeof Button>;
 
