@@ -1,10 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { counterSlice } from 'entities/Counter';
-import { CounterState } from 'entities/Counter/model/types/counterSchema';
+import { counterSlice, CounterSchema } from 'entities/Counter';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
 interface StoreSchema {
-  counter: CounterState;
+  counter: CounterSchema;
 }
 
 export const createStore = (initialState?: StoreSchema) =>

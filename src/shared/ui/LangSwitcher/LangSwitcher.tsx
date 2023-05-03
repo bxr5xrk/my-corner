@@ -29,7 +29,7 @@ export const LangSwitcher = ({ isCollapsed }: LangSwitcherProps) => {
       <span
         className={cl(
           isCollapsed ? 'invisible opacity-0' : 'visible opacity-100',
-          'transition-all duration-500'
+          'transition-all duration-300'
         )}
       >
         {t('language')}

@@ -3,22 +3,7 @@ import { HomePage } from 'pages/HomePage';
 import { MePage } from 'pages/MePage';
 import { NotFoundPage } from 'pages/NotFoundPage';
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
-
-const AppRoutes = {
-  ROOT: 'root',
-  HOME: 'home',
-  ME: 'me',
-  NOT_FOUND: 'not_found'
-} as const;
-
-type RoutePath = (typeof AppRoutes)[keyof typeof AppRoutes];
-
-export const RoutePath: Record<RoutePath, string> = {
-  [AppRoutes.ROOT]: '/',
-  [AppRoutes.HOME]: '',
-  [AppRoutes.ME]: '/me',
-  [AppRoutes.NOT_FOUND]: '*'
-} as const;
+import { AppRoutes, RoutePath } from 'shared/config/router/routePaths';
 
 const routeConfig: Record<RoutePath, RouteObject> = {
   [AppRoutes.ROOT]: {

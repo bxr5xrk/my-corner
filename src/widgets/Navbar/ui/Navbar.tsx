@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { RoutePath } from 'shared/config/router';
+import { RoutePath } from 'shared/config/router/routePaths';
 import { Button } from 'shared/ui/Button/Button';
 import { Link } from 'shared/ui/Link/Link';
 import { Modal } from 'shared/ui/Modal/Modal';

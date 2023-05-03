@@ -24,7 +24,7 @@ export const ThemeSwitcher = ({ isCollapsed }: ThemeSwitcherProps) => {
       <span
         className={cl(
           isCollapsed ? 'invisible opacity-0' : 'visible opacity-100',
-          'transition-all duration-500'
+          'transition-all duration-300'
         )}
       >
         {theme === 'dark-theme' ? 'Dark' : 'Light'}

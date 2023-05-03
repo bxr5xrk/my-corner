@@ -9,6 +9,7 @@ Tech Stack:
 - Jest (unit tests)
 - Storybook, RTL (component tests) 
 - Chromatic (regression tests)
+- Github Actions (CI pipeline)
 - Webpack (builder)
 
 - Bundle analyzer

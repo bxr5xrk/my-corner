@@ -16,7 +16,7 @@ export const Sidebar = () => {
   return (
     <aside
       style={{ width: isCollapsed ? SIDEBAR_MIN_WIDTH : SIDEBAR_MAX_WIDTH }}
-      className="group sticky top-20 flex h-fit min-h-[300px] flex-col justify-between rounded-md border border-secondary-200 bg-secondary-100 p-4 transition-all duration-500"
+      className="group sticky top-20 flex h-fit min-h-[300px] flex-col justify-between rounded-md border border-secondary-200 bg-secondary-100 p-4 transition-all duration-300"
     >
       <Toggle onToggle={onToggle} isCollapsed={isCollapsed} />
 
