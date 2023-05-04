@@ -51,28 +51,27 @@ export const LoginForm = ({ onClose }: LoginFormProps) => {
       <div className="mt-10 space-y-6">
         <Input
           ref={usernameRef}
-          placeholder="Username"
-          label="Enter your username"
+          placeholder="At least 3 chars"
+          label={t('username-label')}
           required
+          minLength={3}
+          maxLength={25}
           type="text"
           autoFocus
         />
         <Input
           ref={passwordRef}
-          placeholder="Password"
-          label="Enter your password"
+          placeholder="At least 8 chars"
+          label={t('password-label')}
           required
+          minLength={8}
+          maxLength={25}
           type="password"
         />
 
         <p className="text-center text-sm text-red-500" ref={errorRef}></p>
 
-        <Button
-          className="w-full"
-          theme="primary"
-          isLoading={isLoading}
-          type="submit"
-        >
+        <Button theme="primary" w="full" isLoading={isLoading} type="submit">
           {t('log-in')}
         </Button>
       </div>

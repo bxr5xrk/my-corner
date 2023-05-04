@@ -23,22 +23,25 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 border-b border-b-secondary-100">
-      <div className="mx-auto flex max-w-7xl justify-between bg-secondary-50 py-2">
-        <Link to={RoutePath.home}>{t('home')}</Link>
+      <div className="mx-auto flex max-w-7xl items-center justify-between bg-secondary-50 py-2">
+        {/* logo here */}
+        <div></div>
 
-        <Link className="text-red-500" theme="bordered" to={RoutePath.me}>
-          {t('cabinet')}
-        </Link>
+        <nav className="space-x-10">
+          <Link to={RoutePath.home}>{t('home')}</Link>
+
+          <Link to={RoutePath.me}>{t('cabinet')}</Link>
+        </nav>
 
         {isAuthorized ? (
           <Button onClick={onLogOut} theme="primary">
-            Log out
+            {t('log-out')}
           </Button>
         ) : null}
 
         {!isAuthorized ? (
           <Button onClick={() => setShowAuthModal(true)} theme="primary">
-            Log in
+            {t('log-in')}
           </Button>
         ) : null}
 

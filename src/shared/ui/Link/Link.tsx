@@ -20,7 +20,8 @@ export const Link = ({
       to={to}
       className={cl(
         'p-2',
-        theme === 'primary' && '',
+        theme === 'primary' &&
+          'text-sm font-semibold leading-6 text-secondary-900',
         theme === 'bordered' && 'rounded-md border',
         className
       )}

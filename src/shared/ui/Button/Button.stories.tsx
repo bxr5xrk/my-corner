@@ -18,11 +18,20 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const PrimaryDark: Story = {
   args: {
     children: 'Click me',
     theme: 'primary'
-  }
+  },
+  decorators: [ThemeDecorator('dark-theme')]
+};
+
+export const PrimaryLight: Story = {
+  args: {
+    children: 'Click me',
+    theme: 'primary'
+  },
+  decorators: [ThemeDecorator('light-theme')]
 };
 
 export const ClearLight: Story = {

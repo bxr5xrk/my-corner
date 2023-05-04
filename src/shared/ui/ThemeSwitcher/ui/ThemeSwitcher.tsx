@@ -3,6 +3,7 @@ import Sun from '../../../assets/sun.svg';
 import Moon from '../../../assets/moon.svg';
 import { Button } from 'shared/ui/Button/Button';
 import { cl } from 'shared/lib/cl';
+import { useTranslation } from 'react-i18next';
 
 interface ThemeSwitcherProps {
   isCollapsed: boolean;
@@ -10,6 +11,7 @@ interface ThemeSwitcherProps {
 
 export const ThemeSwitcher = ({ isCollapsed }: ThemeSwitcherProps) => {
   const { theme, toggleTheme } = useTheme();
+  const { t } = useTranslation();
 
   return (
     <Button onClick={toggleTheme} className="flex items-center gap-5">
@@ -27,7 +29,7 @@ export const ThemeSwitcher = ({ isCollapsed }: ThemeSwitcherProps) => {
           'transition-all duration-300'
         )}
       >
-        {theme === 'dark-theme' ? 'Dark' : 'Light'}
+        {t(theme)}
       </span>
     </Button>
   );

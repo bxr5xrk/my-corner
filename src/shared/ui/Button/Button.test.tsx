@@ -18,18 +18,19 @@ describe('Button', () => {
 
   it('applies the "primary" theme class when theme prop is "primary"', () => {
     const { getByText } = render(<Button theme="primary">Primary</Button>);
-    expect(getByText('Primary')).toHaveClass('border p-2');
+    expect(getByText('Primary')).toHaveClass(
+      'rounded-md border border-secondary-400 bg-secondary-200 px-4 py-1.5 text-sm font-semibold text-secondary-700 hover:bg-secondary-400 w-fit'
+    );
   });
 
   it('applies no additional classes when theme prop is "clear"', () => {
     const { getByText } = render(<Button theme="clear">Clear</Button>);
-    expect(getByText('Clear')).not.toHaveClass('border p-2');
+    expect(getByText('Clear')).toHaveClass('w-fit');
   });
 
   it('applies Tailwind classes correctly', () => {
-    const { getByText } = render(<Button>Test</Button>);
-    expect(getByText('Test')).toHaveClass('cursor-pointer');
-    expect(getByText('Test')).not.toHaveClass('border');
-    expect(getByText('Test').classList.contains('p-2')).toBe(false);
+    const { getByText } = render(<Button w="full">Test</Button>);
+    expect(getByText('Test')).toHaveClass('w-full');
+    expect(getByText('Test')).not.toHaveClass('rounded-md');
   });
 });
