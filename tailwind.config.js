@@ -38,10 +38,6 @@ module.exports = {
           900: 'var(--primary-900)',
           950: 'var(--primary-950)'
         }
-
-        // secondary: 'var(--secondary-color)',
-        // primary: 'rgb(var(--primary-color) / <alpha-value>)',
-        // secondary: 'rgb(var(--secondary-color) / <alpha-value>)',
       }
     }
   },

@@ -9,6 +9,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   theme?: ButtonTheme;
   isLoading?: boolean;
+  w?: 'full' | 'fit';
 }
 
 export const Button = ({
@@ -16,14 +17,16 @@ export const Button = ({
   children,
   isLoading,
   theme = 'clear',
+  w = 'fit',
   ...props
 }: ButtonProps) => {
   return (
     <button
       className={cl(
-        'cursor-pointer',
-        theme === 'primary' && 'border p-2',
+        theme === 'primary' &&
+          'rounded-md border border-secondary-400 bg-secondary-200 px-4 py-1.5 text-sm font-semibold text-secondary-700 hover:bg-secondary-400',
         theme === 'clear' && '',
+        w === 'fit' ? 'w-fit' : 'w-full',
         className
       )}
       {...props}

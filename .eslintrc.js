@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-undef
 module.exports = {
   env: {
     browser: true,
@@ -28,13 +29,11 @@ module.exports = {
       }
     ],
     'linebreak-style': ['error', 'unix'],
-    quotes: ['error', 'single'],
     semi: ['error', 'always'],
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/no-confusing-void-expression': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     'react/jsx-uses-react': 'off',
-    'react/react-in-jsx-scope': 'off',
     'no-console': 'warn',
     'jsx-quotes': ['error', 'prefer-double'],
     'semi-spacing': [
@@ -84,7 +83,6 @@ module.exports = {
   ignorePatterns: [
     'postcss.config.js',
     'tailwind.config.js',
-    'webpack.config.js',
-    '.eslintrc.js'
+    'webpack.config.js'
   ]
 };

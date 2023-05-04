@@ -6,5 +6,10 @@
   "go-back-home": "Назад на головну",
   "we-coudnt-find-page": "На жаль, нам не вдалося знайти сторінку, яку ви шукаєте.",
   "log-in": "Увійти",
-  "welcome-back": "З поверненням!"
+  "log-out": "Вийти",
+  "welcome-back": "З поверненням!",
+  "dark-theme": "Темна",
+  "light-theme": "Світла",
+  "username-label": "Введіть ваш нікнейм",
+  "password-label": "Введіть ваш пароль"
 }
