@@ -4,7 +4,7 @@ import { Navbar } from 'widgets/Navbar';
 
 export const Layout = () => {
   return (
-    <div className="grid h-screen w-screen grid-rows-autoFr space-y-5 overflow-y-auto">
+    <div className="grid h-screen w-screen grid-rows-autoFr space-y-5 overflow-y-auto px-3">
       <Navbar />
 
       <Suspense fallback={<>Loading...</>}>

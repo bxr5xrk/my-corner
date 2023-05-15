@@ -1,9 +1,10 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { api } from 'shared/api/api';
 import { LoginRes, LoginSchema } from '../../types/loginSchema';
 
 export const authApi = createApi({
   reducerPath: 'authApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://my-corner-server.vercel.app' }),
+  baseQuery: fetchBaseQuery(api()),
   endpoints: (builder) => ({
     login: builder.mutation<LoginRes, LoginSchema>({
       query: ({ username, password }) => ({
