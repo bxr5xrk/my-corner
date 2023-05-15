@@ -1,8 +1,8 @@
-import { useAppDispatch } from 'app/providers/StoreProvider';
 import { LS_USER_KEY, userActions } from 'entities/User/model/slice/userSlice';
 import { useLogin } from 'features/AuthByUsername';
 import { FormEvent, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useAppDispatch } from 'shared/hooks';
 import { Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 
@@ -44,7 +44,7 @@ export const LoginForm = ({ onClose }: LoginFormProps) => {
   }, [data, error]);
 
   return (
-    <form onSubmit={onSubmit}>
+    <form data-testid="form" onSubmit={onSubmit}>
       <h3 className="text-center text-lg font-medium leading-6">
         {t('welcome-back')}
       </h3>
@@ -61,10 +61,10 @@ export const LoginForm = ({ onClose }: LoginFormProps) => {
         />
         <Input
           ref={passwordRef}
-          placeholder="At least 8 chars"
+          placeholder="At least 4 chars"
           label={t('password-label')}
           required
-          minLength={8}
+          minLength={4}
           maxLength={25}
           type="password"
         />

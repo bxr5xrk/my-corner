@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector } from 'app/providers/StoreProvider';
+import { useAppDispatch, useAppSelector } from 'shared/hooks';
 import { counterActions } from '../model/slice/counterSlice';
 import { selectCounter } from '../model/selectors/counterSelectors';
 

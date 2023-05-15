@@ -2,7 +2,6 @@ import { configureStore } from '@reduxjs/toolkit';
 import { counterSlice, CounterSchema } from 'entities/Counter';
 import { UserSchema, userSlice } from 'entities/User';
 import { authApi } from 'features/AuthByUsername';
-import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
 export interface StoreSchema {
   counter: CounterSchema;
@@ -27,6 +26,3 @@ const store = createStore();
 export type RootState = ReturnType<typeof store.getState>;
 
 export type AppDispatch = typeof store.dispatch;
-
-export const useAppDispatch: () => AppDispatch = useDispatch;
-export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;

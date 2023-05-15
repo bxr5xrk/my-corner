@@ -1,12 +1,12 @@
-import { useAppDispatch, useAppSelector } from 'app/providers/StoreProvider';
+import { useAppDispatch, useAppSelector } from 'shared/hooks';
 import { selectUser } from 'entities/User/model/selectors/userSelectors';
 import { LS_USER_KEY, userActions } from 'entities/User/model/slice/userSlice';
 import { LoginModal } from 'features/AuthByUsername';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { RoutePath } from 'shared/config/router/routePaths';
 import { Button } from 'shared/ui/Button/Button';
 import { Link } from 'shared/ui/Link/Link';
+import { navbarItemsList } from '../model/itemsList';
 
 export default function Navbar() {
   const dispatch = useAppDispatch();
@@ -27,10 +27,13 @@ export default function Navbar() {
         {/* logo here */}
         <div></div>
 
-        <nav className="space-x-10">
-          <Link to={RoutePath.home}>{t('home')}</Link>
-
-          <Link to={RoutePath.me}>{t('cabinet')}</Link>
+        <nav className="flex space-x-6">
+          {navbarItemsList.map((i) => (
+            <Link to={i.to} key={i.to} className="flex items-center">
+              {i.icon}
+              <p>{t(i.title)}</p>
+            </Link>
+          ))}
         </nav>
 
         {isAuthorized ? (
